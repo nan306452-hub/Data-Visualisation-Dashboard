@@ -19,57 +19,103 @@ A web-based inventory dashboard for uploading, processing, and visualising produ
 - Recharts
 
 ## Prerequisites
-- Node.js **v20.19+**, **v22.12+**, or **v24+**
-  - If you need to manage multiple Node versions, use [nvm](https://github.com/nvm-sh/nvm):
-    ```
-    nvm install 22
-    nvm use 22
-    ```
+
+### Node.js
+This project requires Node.js **v20.19+**, **v22.12+**, or **v24+**.
+
+Check your version:
+```
+node -v
+```
+
+If you need to install or switch versions:
+
+**Mac / Linux** — use [nvm](https://github.com/nvm-sh/nvm):
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Restart your terminal, then:
+nvm install 22
+nvm use 22
+```
+
+**Windows** — use [nvm-windows](https://github.com/coreybutler/nvm-windows):
+- Download and run the installer from the [releases page](https://github.com/coreybutler/nvm-windows/releases)
+- Then in Command Prompt or PowerShell:
+```
+nvm install 22
+nvm use 22
+```
+
+### Git
+Make sure [Git](https://git-scm.com/downloads) is installed to clone the repository.
+
+---
 
 ## How to Run
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/nan306452-hub/Data-Visualisation-Dashboard.git
-   cd Data-Visualisation-Dashboard
-   ```
+### 1. Clone the repository
+```
+git clone https://github.com/nan306452-hub/Data-Visualisation-Dashboard.git
+cd Data-Visualisation-Dashboard
+```
 
-2. Create the environment file:
-   ```
-   echo 'DATABASE_URL="file:./dev.db"' > .env
-   ```
+### 2. Create the environment file
 
-3. Install dependencies:
-   ```
-   npm install
-   ```
+**Mac / Linux:**
+```
+echo 'DATABASE_URL="file:./dev.db"' > .env
+```
 
-4. Rebuild native modules for your Node version:
-   ```
-   npm rebuild better-sqlite3
-   ```
+**Windows (Command Prompt):**
+```
+echo DATABASE_URL="file:./dev.db" > .env
+```
 
-5. Run Prisma migration:
-   ```
-   npx prisma migrate dev --name init
-   ```
+**Windows (PowerShell):**
+```
+'DATABASE_URL="file:./dev.db"' | Out-File -Encoding utf8 .env
+```
 
-6. Generate Prisma client:
-   ```
-   npx prisma generate
-   ```
+> Alternatively on any platform, create a file called `.env` in the project root and add this line:
+> ```
+> DATABASE_URL="file:./dev.db"
+> ```
 
-7. Seed the database (creates the admin user):
-   ```
-   npx prisma db seed
-   ```
+### 3. Install dependencies
+```
+npm install
+```
 
-8. Start the development server:
-   ```
-   npm run dev
-   ```
+### 4. Rebuild native modules for your Node version
+```
+npm rebuild better-sqlite3
+```
 
-9. Open `http://localhost:3000/login`
+### 5. Run Prisma migration
+```
+npx prisma migrate dev --name init
+```
+
+### 6. Generate Prisma client
+```
+npx prisma generate
+```
+
+### 7. Seed the database
+This creates the admin user needed to log in:
+```
+npx prisma db seed
+```
+
+### 8. Start the development server
+```
+npm run dev
+```
+
+### 9. Open the app
+Go to `http://localhost:3000/login` in your browser.
+
+---
 
 ## Login
 - Username: `admin`
