@@ -28,7 +28,7 @@ A web-based inventory dashboard for uploading, processing, and visualising produ
 3. Start the development server:
    `npm run dev`
 
-4. Open `http://localhost:3000`
+4. Open `http://localhost:3000/login`
 
 ## Login
 - Username: `admin`
